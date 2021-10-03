@@ -1,0 +1,134 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "CleanArchMVC.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CleanArchMVC.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArchMVC.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchMVC.Application.dll": {}
+        }
+      },
+      "CleanArchMVC.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/CleanArchMVC.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchMVC.Domain.dll": {}
+        }
+      },
+      "CleanArchMVC.Infra.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CleanArchMVC.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArchMVC.Infra.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchMVC.Infra.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CleanArchMVC.Application/1.0.0": {
+      "type": "project",
+      "path": "../CleanArchMVC.Application/CleanArchMVC.Application.csproj",
+      "msbuildProject": "../CleanArchMVC.Application/CleanArchMVC.Application.csproj"
+    },
+    "CleanArchMVC.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CleanArchMVC.Domain/CleanArchMVC.Domain.csproj",
+      "msbuildProject": "../CleanArchMVC.Domain/CleanArchMVC.Domain.csproj"
+    },
+    "CleanArchMVC.Infra.Data/1.0.0": {
+      "type": "project",
+      "path": "../CleanArchMVC.Infra.Data/CleanArchMVC.Infra.Data.csproj",
+      "msbuildProject": "../CleanArchMVC.Infra.Data/CleanArchMVC.Infra.Data.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "CleanArchMVC.Application >= 1.0.0",
+      "CleanArchMVC.Domain >= 1.0.0",
+      "CleanArchMVC.Infra.Data >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\pedro\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Infra.IoC\\CleanArchMVC.Infra.IoC.csproj",
+      "projectName": "CleanArchMVC.Infra.IoC",
+      "projectPath": "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Infra.IoC\\CleanArchMVC.Infra.IoC.csproj",
+      "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Infra.IoC\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Application\\CleanArchMVC.Application.csproj": {
+              "projectPath": "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Application\\CleanArchMVC.Application.csproj"
+            },
+            "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Domain\\CleanArchMVC.Domain.csproj": {
+              "projectPath": "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Domain\\CleanArchMVC.Domain.csproj"
+            },
+            "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Infra.Data\\CleanArchMVC.Infra.Data.csproj": {
+              "projectPath": "C:\\Users\\pedro\\Downloads\\Github\\Clean_Architecture_Essencial_ASPNET_Core\\CleanArchMVC\\CleanArchMVC.Infra.Data\\CleanArchMVC.Infra.Data.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
