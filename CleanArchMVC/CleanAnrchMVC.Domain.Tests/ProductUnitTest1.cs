@@ -73,7 +73,6 @@ namespace CleanAnrchMVC.Domain.Tests
             action.Should().NotThrow<NullReferenceException>();
         }
 
-
         [Fact(DisplayName = "Create Product With Invalid Image")]
         public void CreateProduct_WithInvalidImage_ResultInvalidState()
         {
