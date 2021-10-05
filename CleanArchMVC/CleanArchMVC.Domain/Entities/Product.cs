@@ -43,7 +43,7 @@ namespace CleanArchMVC.Domain.Entities
             DomainExceptionValidation.When(description.Length < 5, "Invalid Description, Too Short, Minimal is 5 characters!");
             DomainExceptionValidation.When(price < 0, "Invalid Price value");
             DomainExceptionValidation.When(stock < 0, "Invalid Stock value");
-            DomainExceptionValidation.When(image.Length > 250, "Invalid Image Name, Too Long, maximun 250 characters");
+            DomainExceptionValidation.When(image?.Length > 250, "Invalid Image Name, Too Long, maximun 250 characters");
 
             this.Name = name;
             this.Description = description;
