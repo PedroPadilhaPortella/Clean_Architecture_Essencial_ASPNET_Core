@@ -1,8 +1,7 @@
-﻿using CleanArchMVC.Application.Interfaces;
+﻿using CleanArchMVC.Application.DTO;
+using CleanArchMVC.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CleanArchMVC.WebUI.Controllers
@@ -14,10 +13,11 @@ namespace CleanArchMVC.WebUI.Controllers
         {
             _productService = productService;
         }
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var products = await _productService.GetAll();
+            IEnumerable<ProductDTO> products = await _productService.GetAll();
             return View(products);
         }
     }
