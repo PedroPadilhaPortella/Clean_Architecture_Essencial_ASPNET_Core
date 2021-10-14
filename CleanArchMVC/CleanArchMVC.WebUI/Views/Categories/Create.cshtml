@@ -1,0 +1,27 @@
+﻿@model CleanArchMVC.Application.DTO.CategoryDTO
+@{
+    ViewData["Title"] = "Register new Category";
+}
+
+<h2>@ViewData["Title"]</h2>
+<form asp-action="Create" method="post">
+    <div class="form-horizontal">
+        <hr>
+        <div class="text-danger" asp-validation-summary="All"></div>
+        
+        <div class="form-group">
+            <label class="col-md-2 control-label" asp-for="Name"></label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" asp-for="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-success" value="Create">
+                <a class="btn btn-info" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
