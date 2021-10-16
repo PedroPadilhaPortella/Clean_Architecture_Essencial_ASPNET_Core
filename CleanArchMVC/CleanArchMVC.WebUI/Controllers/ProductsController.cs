@@ -1,9 +1,11 @@
 ﻿using CleanArchMVC.Application.DTO;
 using CleanArchMVC.Application.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace CleanArchMVC.WebUI.Controllers
@@ -12,10 +14,15 @@ namespace CleanArchMVC.WebUI.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
-        public ProductsController(IProductService productService, ICategoryService categoryService)
+        private readonly IWebHostEnvironment _environment;
+        public ProductsController(
+            IProductService productService, 
+            ICategoryService categoryService, 
+            IWebHostEnvironment environment)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _environment = environment;
         }
 
         [HttpGet]
@@ -67,6 +74,41 @@ namespace CleanArchMVC.WebUI.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(productDTO);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var productDTO = await _productService.GetById(id);
+
+            if (productDTO == null) return NotFound();
+
+            string wwwroot = _environment.WebRootPath;
+            var image = Path.Combine(wwwroot, "images\\" + productDTO.Image);
+            var exists = System.IO.File.Exists(image);
+            ViewBag.ImageExist = exists;
+
+            return View(productDTO);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            var productDTO = await _productService.GetById(id);
+
+            if (productDTO == null) return NotFound();
+
+            return View(productDTO);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> Remove(int? id)
+        {
+            await _productService.Remove(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

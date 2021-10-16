@@ -32,7 +32,6 @@
                 <th>@Html.DisplayNameFor(model => model.Description)</th>
                 <th>@Html.DisplayNameFor(model => model.Price)</th>
                 <th>@Html.DisplayNameFor(model => model.Stock)</th>
-                <th>@Html.DisplayNameFor(model => model.Image)</th>
                 <th></th>
             </tr>
         </thead>
@@ -44,7 +43,6 @@
                 <td>@Html.DisplayFor(modelItem => item.Description)</td>
                 <td>@Html.DisplayFor(modelItem => item.Price)</td>
                 <td>@Html.DisplayFor(modelItem => item.Stock)</td>
-                <td>@Html.DisplayFor(modelItem => item.Image)</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-warning">
                         <span class="fas fa-edit">Edit</span>

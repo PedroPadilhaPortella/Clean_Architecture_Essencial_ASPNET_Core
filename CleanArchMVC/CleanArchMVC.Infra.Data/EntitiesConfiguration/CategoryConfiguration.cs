@@ -12,9 +12,10 @@ namespace CleanArchMVC.Application.EntitiesConfiguration
             builder.Property(ct => ct.Name).HasMaxLength(100).IsRequired();
 
             builder.HasData(
-                new Category(1, "Acessórios"),
-                new Category(2, "Eletronicos"),
-                new Category(3, "Materiais Escolares")
+                new Category(1, "Acessories and Peripherals"),
+                new Category(2, "Harware"),
+                new Category(3, "Notebooks"),
+                new Category(4, "Others")
             );
         }
     }
