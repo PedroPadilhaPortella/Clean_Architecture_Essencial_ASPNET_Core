@@ -1,12 +1,6 @@
 ﻿using CleanArchMVC.Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace CleanArchMVC.Infra.Data.Context
 {
     public class AppDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CleanArchMVC.Domain.Validation;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchMVC.Domain.Validation;
 
 namespace CleanArchMVC.Domain.Entities
 {
