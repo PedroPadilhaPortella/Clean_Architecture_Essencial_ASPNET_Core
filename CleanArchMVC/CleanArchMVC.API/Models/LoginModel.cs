@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CleanArchMVC.WebUI.ViewModels
+namespace CleanArchMVC.API.Models
 {
-    public class LoginViewModel
+    public class LoginModel
     {
         [Required(ErrorMessage = "Email is Required")]
         [EmailAddress(ErrorMessage = "Invalid Format Email")]
@@ -13,6 +13,5 @@ namespace CleanArchMVC.WebUI.ViewModels
             MinimumLength = 10)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public string ReturnUrl { get; set; }
     }
 }

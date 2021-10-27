@@ -27,6 +27,9 @@ namespace CleanArchMVC.Infra.IoC
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 
+            services.ConfigureApplicationCookie(options =>
+                 options.AccessDeniedPath = "/Account/Login");
+
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
 
@@ -38,9 +41,6 @@ namespace CleanArchMVC.Infra.IoC
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
             services.AddAutoMapper(typeof(DTOToCommandMappingProfile));
-
-            services.ConfigureApplicationCookie(options =>
-                options.AccessDeniedPath = "/Account/Login");
 
             var myHandlers = AppDomain.CurrentDomain.Load("CleanArchMVC.Application");
             services.AddMediatR(myHandlers);
