@@ -1,5 +1,7 @@
 ﻿using CleanArchMVC.API.Models;
 using CleanArchMVC.Domain.Account;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +18,7 @@ namespace CleanArchMVC.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class TokenController : ControllerBase
     {
         private readonly IAuthenticate _authentication;
@@ -28,6 +31,7 @@ namespace CleanArchMVC.API.Controllers
         }
 
         [HttpPost("Register")]
+        [AllowAnonymous]
         //[ApiExplorerSettings(IgnoreApi = true)]
         public async Task<ActionResult<UserToken>> Register([FromBody] LoginModel userInfo)
         {
@@ -45,6 +49,7 @@ namespace CleanArchMVC.API.Controllers
         }
 
         [HttpPost("Login")]
+        [AllowAnonymous]
         public async Task<ActionResult<UserToken>> Login([FromBody] LoginModel userInfo)
         {
             var result = await _authentication.Authenticate(userInfo.Email, userInfo.Password);
